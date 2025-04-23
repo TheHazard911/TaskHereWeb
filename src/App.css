@@ -1,179 +1,287 @@
+@font-face {
+  font-family: "Mclaren";
+  src: url("./fonts/McLaren-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Special";
+  src: url("./fonts/SpecialGothicCondensedOne-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-	--rojo: #ba181b;
-	--azul: #00b4d8;
-	--azul-hover: #48cae4;
-	--rojo-hover: #e5383b;
-	--verde: #09a129;
+  --rojo: #ba181b;
+  --azul: #00b4d8;
+  --azul-hover: #48cae4;
+  --rojo-hover: #e5383b;
+  --verde: #09a129;
+  --font-mclaren: "Mclaren", sans-serif;
+  --font-special: "Special", sans-serif;
+}
+#root {
+  width: 100%;
 }
 
 body {
-	font-family: Poppins;
-	max-width: 1200px;
-	margin: 40px auto;
-	display: flex;
-	justify-content: center;
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  font-family: var(--font-mclaren);
+  background-color: #0f172a;
 }
 
 .card-to-do {
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-	padding: 25px;
-	border-radius: 20px;
-	width: 700px;
+  background-color: #0f172a;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
 }
 
 h1 {
-	text-align: center;
+  text-align: center;
+  width: 100%;
 }
 
 .counter-todos {
-	margin: 40px 0;
-	display: flex;
-	justify-content: space-around;
+  width: 100%;
+  height: 2rem;
+  margin: 2px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  h2 {
+    margin: 1rem;
+    padding: 0;
+    text-align: center;
+  }
 }
 
 .counter-todos h3 {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .counter-todos span {
-	color: #f29559;
-	font-weight: 700;
-	font-size: 24px;
-	margin-left: 10px;
+  color: #f29559;
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 10px;
 }
 
 ul {
-	margin-top: 50px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 ul li {
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 ul li span {
-	overflow: hidden;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 ul li form {
-	flex: 1;
-	display: flex;
-	justify-content: space-between;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .input-update {
-	border: none;
-	font-weight: 500;
-	font-family: inherit;
-	font-size: 18px;
-	color: #555;
-	width: 100%;
-	/* background-color: #000; */
-	outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555;
+  width: 100%;
+  /* background-color: #000; */
+  outline: none;
 }
 
 .container-done {
-	background-color: white;
-	width: 24px;
-	height: 24px;
-	border-radius: 20px;
-	border: 2px solid var(--verde);
-	cursor: pointer;
+  background-color: white;
+  width: 25px;
+  height: 27px;
+  border-radius: 100%;
+  border: 2px solid var(--verde);
+  cursor: pointer;
 }
 
 .container-done.active {
-	background-color: var(--verde);
+  background-color: var(--verde);
 }
 
 .text-decoration-dashed {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .btn-delete {
-	background-color: var(--rojo);
-	color: #fff;
-	padding: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	border-radius: 50%;
-	transition: all 0.3s;
-	cursor: pointer;
-	font-family: inherit;
+  background-color: var(--rojo);
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .btn-delete:hover {
-	background-color: var(--rojo-hover);
+  background-color: var(--rojo-hover);
 }
 
 .btn-edit {
-	background-color: var(--azul);
-	color: #fff;
-	padding: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	border-radius: 50%;
-	transition: all 0.3s;
-	cursor: pointer;
-	font-family: inherit;
+  background-color: var(--azul);
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .btn-edit:hover {
-	background-color: var(--azul-hover);
+  background-color: var(--azul-hover);
 }
 
 form {
-	display: flex;
-	gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .add-todo h3 {
-	text-align: center;
-	margin-bottom: 40px;
-	font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-add {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
-	border-radius: 20px;
-	flex: 1;
-	font-family: inherit;
-	font-size: 17px;
-	color: #555;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  flex: 1;
+  font-size: 17px;
+  color: #555;
 }
 
 .btn-add {
-	border: none;
-	background-color: var(--azul);
-	color: #fff;
-	padding: 5px 40px;
-	border-radius: 20px;
-	font-family: inherit;
-	cursor: pointer;
-	font-size: 17px;
+  border: none;
+  background-color: var(--azul);
+  color: #fff;
+  padding: 5px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 17px;
 }
 
 .btn-add:hover {
-	background-color: var(--azul-hover);
+  background-color: var(--azul-hover);
+}
+.contain-one {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.contain-two {
+  width: 100%;
+  height: 80%;
+  h3 {
+    text-align: start;
+    font-size: 2rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.contain-three {
+  width: 100%;
+  height: 10%;
+  padding: 1rem;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #303a4a;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    i {
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.task-border {
+  width: 100%;
+  border-top-right-radius: 2.1rem;
+  border-bottom-left-radius: 2.1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.color-light {
+  background-color: #fff;
+}
+.navbar-brand {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  img {
+    border-radius: 100%;
+    margin-right: 1rem;
+  }
+  p {
+    margin: 0;
+    font-family: var(--font-mclaren);
+    font-weight: 600;
+  }
+  p:hover {
+    color: white;
+    transition: all 0.5s ease-in-out;
+  }
 }
