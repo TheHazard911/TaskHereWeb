@@ -5,7 +5,6 @@ import { useTodo } from './hooks/useTodo';
 import icon from "./images/icon.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './App.css';
 
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
 
 	return (
 		<>
+		{/*-------------- contenido -----------------*/}
 		<div className='card-to-do'>
 			<div className="contain-one">
 		<nav class="navbar navbar-expand-lg">
@@ -30,6 +30,7 @@ function App() {
 				<p>TaskHere</p>
 				</a>
 			</div>
+			<a href="/login"><i class="bi bi-box-arrow-right"></i></a>
 		</nav>
 				
 				<div className='counter-todos'>
@@ -55,22 +56,22 @@ function App() {
 				<button type="button" className="width-100 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Tarea <i class="bi bi-plus-circle"></i></button>
 				</div>
 			</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Tarea</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-		<div className='add-todo'>
-				<TodoAdd handleNewTodo={handleNewTodo} />
+		{/*-------------------- modal ---------------------------*/}
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content ">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Tarea</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div className='add-todo'>
+						<TodoAdd handleNewTodo={handleNewTodo} />
+				</div>
+			</div>
+			</div>
 		</div>
-      </div>
-    </div>
-  </div>
-</div>
+		</div>
 		</>
 	);
 }
