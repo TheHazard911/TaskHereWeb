@@ -16,7 +16,7 @@ import {
 
 function AuthWrapper() {
   return (
-    <BrowserRouter basename="/TaskHereWeb">
+    <BrowserRouter basename="/TaskHereWeb/">
       {/* Añade la propiedad basename */}
       <AppRoutes />
     </BrowserRouter>
