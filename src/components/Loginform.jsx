@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import icon from "../images/icon.png";
+import { useNavigate } from 'react-router-dom';
 
 const StyledWrapper = styled.div`
   .form {
@@ -98,6 +99,12 @@ const LoginForm = ({ onLoginSuccess, onNavigateToRegister }) => {
     }
   };
 
+  const navigate = useNavigate();
+  const handleNavigateToRegister = () => {
+    navigate("/register");
+  };
+
+
   return (
     <StyledWrapper>
       <form className="form login-form" onSubmit={handleSubmit}>
@@ -129,7 +136,7 @@ const LoginForm = ({ onLoginSuccess, onNavigateToRegister }) => {
           />
         </span>
         <span className="span">
-          <a href="" onClick={onNavigateToRegister}>
+          <a href="" onClick={handleNavigateToRegister}>
             No tienes cuenta? Registrarse
           </a>
         </span>

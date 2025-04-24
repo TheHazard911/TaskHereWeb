@@ -5,6 +5,7 @@ import { useTodo } from './hooks/useTodo';
 import icon from "./images/icon.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
@@ -18,6 +19,12 @@ function App() {
 		handleUpdateTodo,
 	} = useTodo();
 
+	const navigate = useNavigate();
+
+	const handleNavigateToLogin = () => {
+	  navigate("/login");
+	};
+
 	return (
 		<>
 		{/*-------------- contenido -----------------*/}
@@ -29,10 +36,10 @@ function App() {
 				<img src={icon} alt="Logo" width="60" height="60" class="d-inline-block align-text-top"/>
 				<p>TaskHere</p>
 				</a>
+			<a className='gohome' href="/" onClick={handleNavigateToLogin}><i class="bi bi-box-arrow-right"></i></a>
 			</div>
-			<a href="/login"><i class="bi bi-box-arrow-right"></i></a>
 		</nav>
-				
+
 				<div className='counter-todos'>
 					<h2>
 						Tareas: <span>{todosCount}</span>

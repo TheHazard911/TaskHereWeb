@@ -314,3 +314,9 @@ form {
     border-radius: 100%;
   }
 }
+.gohome{
+  margin-left: 2rem;
+  i{
+   font-size: 3rem;
+  }
+}
